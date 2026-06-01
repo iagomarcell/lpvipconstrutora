@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VIP Construtora · Sua casa própria está mais perto do que você imagina</title>
+  <meta name="description" content="Construtora regional do interior do Ceará. Realize o sonho da casa própria com atendimento humano, honesto e sem pressão. Fale com a gente no WhatsApp." />
+  <link rel="icon" type="image/png" href="assets/SIMBOLO-COR02-VIP.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================================================
+       Print overrides — Save as PDF
+       ============================================================ */
+    @page { size: A4; margin: 0; }
+
+    @media print {
+      html, body {
+        background: var(--bg-page) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      /* Hide chrome that doesn't belong in print */
+      .site-header { display: none !important; }
+      .fab-wa { display: none !important; }
+
+      /* Unstick / unfix anything that was positioned for scroll */
+      .objections-left { position: static !important; top: auto !important; }
+
+      /* Hero: trim the giant min-height so we don't get blank pages */
+      .hero {
+        padding: 80px 0 70px !important;
+        min-height: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        break-after: page;
+      }
+      .hero-inner { gap: 40px !important; }
+      .hero-trust { backdrop-filter: none !important; }
+
+      /* Section pacing — keep cards together, breathing room between sections */
+      .valueprop, .pain, .solution, .benefits, .testimonials, .objections, .final-cta {
+        padding: 64px 0 !important;
+        break-inside: avoid;
+      }
+      .final-cta { padding: 80px 0 !important; }
+
+      /* Cards / list items shouldn't split across pages */
+      .pain-card,
+      .benefit,
+      .testi,
+      .step,
+      .qa,
+      .ps-box,
+      .hero-trust,
+      .solution-tag,
+      .testimonials-headline-stat { break-inside: avoid; }
+
+      /* Force every Q&A open in print (no JS dependency) */
+      .qa-a { max-height: none !important; overflow: visible !important; }
+      .qa-toggle { display: none !important; }
+      .qa-q { cursor: default; }
+      .qa { border-color: var(--border-subtle) !important; box-shadow: none !important; }
+
+      /* Backdrop-filter doesn't print — fall back to solid */
+      .hero-trust { background: rgba(28,24,20,0.85) !important; }
+
+      /* Dark sections need explicit backgrounds in print */
+      .final-cta { background: #1C1814 !important; }
+      .site-footer { background: #0F0D0B !important; }
+
+      /* Photos & gradients */
+      img { break-inside: avoid; }
+
+      /* Page break helpers between major sections */
+      .pain { break-before: page; }
+      .benefits { break-before: page; }
+      .objections { break-before: page; }
+      .final-cta { break-before: page; }
+
+      /* Avoid orphan footer */
+      .site-footer { break-before: auto; padding: 48px 0 24px !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel" src="sections.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+  <script type="text/babel">
+    // Auto-print once everything is ready: fonts loaded + React mounted + small buffer
+    (async () => {
+      try {
+        if (document.fonts && document.fonts.ready) {
+          await document.fonts.ready;
+        }
+        // Wait until React has mounted the root
+        const start = Date.now();
+        while (!document.getElementById("root").firstChild && Date.now() - start < 5000) {
+          await new Promise(r => setTimeout(r, 50));
+        }
+        // Wait for hero/final-cta images to settle
+        const imgs = Array.from(document.images);
+        await Promise.all(imgs.map(img =>
+          img.complete ? Promise.resolve() :
+          new Promise(r => { img.addEventListener("load", r); img.addEventListener("error", r); })
+        ));
+        await new Promise(r => setTimeout(r, 500));
+        window.print();
+      } catch (e) {
+        console.error("auto-print failed", e);
+        window.print();
+      }
+    })();
+  </script>
+</body>
+</html>

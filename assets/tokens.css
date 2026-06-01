@@ -1,0 +1,317 @@
+/* ============================================================
+   VIP Construtora — Design Tokens
+   ------------------------------------------------------------
+   Brand: industrial engineering / civil construction
+   Vibe : confident, structural, no-nonsense, sun-on-rebar warm
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* --------------------------------------------------------
+     COLORS — Brand
+     -------------------------------------------------------- */
+  /* Primary — VIP orange. EXACT color sampled from the brand
+     logo (#FF7300). Use for: CTAs, accent chips, icon highlights,
+     the underline swoosh motif.                                */
+  --vip-orange-50:  #FFF1E5;
+  --vip-orange-100: #FFDFC2;
+  --vip-orange-200: #FFBC85;
+  --vip-orange-300: #FF9747;
+  --vip-orange-400: #FF8419;
+  --vip-orange-500: #FF7300;   /* BRAND — exact logo color */
+  --vip-orange-600: #DB6100;
+  --vip-orange-700: #AD4D00;
+  --vip-orange-800: #7A3700;
+  --vip-orange-900: #4A2100;
+
+  /* Secondary — VIP blue. EXACT color sampled from the brand
+     logo (#185098). Trust + civic stability. Use for headings on
+     light surfaces, logo symbol, navigation, secondary links.   */
+  --vip-blue-50:  #E8EEF7;
+  --vip-blue-100: #C5D4EC;
+  --vip-blue-200: #8DAAD8;
+  --vip-blue-300: #5481C4;
+  --vip-blue-400: #2C68B0;
+  --vip-blue-500: #185098;     /* BRAND — exact logo color */
+  --vip-blue-600: #133F78;
+  --vip-blue-700: #0E2E58;
+  --vip-blue-800: #0A2240;
+  --vip-blue-900: #061528;
+
+  /* Neutrals — warm-leaning grays. The site reference uses an
+     off-white near-paper background, dark slate for hero
+     overlays, and warm-cool grays for body copy.               */
+  --neutral-0:    #FFFFFF;
+  --neutral-50:   #F8F6F2;   /* page bg, "paper" */
+  --neutral-100:  #EFECE5;
+  --neutral-200:  #DDD7CD;
+  --neutral-300:  #BFB8AD;
+  --neutral-400:  #8E8880;
+  --neutral-500:  #5E5A55;
+  --neutral-600:  #3D3A36;
+  --neutral-700:  #25241F;
+  --neutral-800:  #161512;   /* hero overlay base */
+  --neutral-900:  #0B0B0A;   /* true black-ish */
+
+  /* Semantic */
+  --success: #1F8A5B;
+  --warning: #E0A500;
+  --danger:  #C9333E;
+  --info:    var(--vip-blue-500);
+
+  /* --------------------------------------------------------
+     Surface / text — semantic aliases
+     -------------------------------------------------------- */
+  /* --------------------------------------------------------
+     LIGHT MODE (default) — semantic surface/text aliases
+     -------------------------------------------------------- */
+  --bg-page:        var(--neutral-0);     /* pure white, per brand "orange + blue + white" */
+  --bg-surface:     var(--neutral-0);
+  --bg-elevated:    var(--neutral-0);
+  --bg-inverse:     var(--vip-blue-500);  /* inverse uses the brand blue */
+  --bg-brand:       var(--vip-orange-500);
+  --bg-brand-soft:  var(--vip-orange-50);
+
+  --fg-primary:     var(--neutral-800);   /* body */
+  --fg-secondary:   var(--neutral-600);
+  --fg-tertiary:    var(--neutral-500);
+  --fg-muted:       var(--neutral-400);
+  --fg-inverse:     var(--neutral-0);
+  --fg-brand:       var(--vip-orange-500);
+  --fg-heading:     var(--vip-blue-500);  /* H1/H2 default */
+
+  --border-subtle:  var(--neutral-200);
+  --border-strong:  var(--neutral-300);
+  --border-brand:   var(--vip-orange-500);
+
+  /* --------------------------------------------------------
+     TYPOGRAPHY
+     Display : Sora — geometric, structural, slight technical
+               feel that echoes the chunky italic in the logo
+     Body    : Manrope — humanist sans, very readable at small
+               sizes, has weight variety for UI
+     Mono    : JetBrains Mono — for data, codes, dimensions
+     -------------------------------------------------------- */
+  --font-display: "Sora", "Helvetica Neue", system-ui, sans-serif;
+  --font-body:    "Manrope", "Helvetica Neue", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  /* Scale — modular ~1.22 */
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-base: 16px;
+  --fs-md:   18px;
+  --fs-lg:   22px;
+  --fs-xl:   28px;
+  --fs-2xl:  36px;
+  --fs-3xl:  48px;
+  --fs-4xl:  64px;
+  --fs-5xl:  84px;
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.18;
+  --lh-normal: 1.45;
+  --lh-loose:  1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-caps:    0.14em;
+
+  /* --------------------------------------------------------
+     RADII — keep modest. Construction = structural, not soft.
+     Capsules used for chips/CTAs only.
+     -------------------------------------------------------- */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-pill: 999px;
+
+  /* --------------------------------------------------------
+     SHADOWS — soft, low ambient. We rely on photography +
+     color for depth, not heavy drop shadows.
+     -------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(11, 11, 10, 0.05);
+  --shadow-sm: 0 2px 6px rgba(11, 11, 10, 0.06), 0 1px 2px rgba(11, 11, 10, 0.04);
+  --shadow-md: 0 8px 20px rgba(11, 11, 10, 0.08), 0 2px 4px rgba(11, 11, 10, 0.04);
+  --shadow-lg: 0 18px 40px rgba(11, 11, 10, 0.12), 0 6px 12px rgba(11, 11, 10, 0.06);
+  --shadow-brand: 0 12px 28px rgba(244, 122, 31, 0.32);
+
+  /* Protection gradient — for text over construction photos */
+  --gradient-protect-bottom: linear-gradient(to top,
+    rgba(11, 11, 10, 0.85) 0%,
+    rgba(11, 11, 10, 0.55) 30%,
+    rgba(11, 11, 10, 0.10) 70%,
+    rgba(11, 11, 10, 0)    100%);
+  --gradient-protect-top: linear-gradient(to bottom,
+    rgba(11, 11, 10, 0.55) 0%,
+    rgba(11, 11, 10, 0)    70%);
+
+  /* --------------------------------------------------------
+     SPACING — 4px base
+     -------------------------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 420ms;
+}
+
+/* ============================================================
+   DARK MODE — alternative surface mapping
+   Activated via [data-theme="dark"] on <html> or any ancestor.
+   The brand colors (orange + blue) stay identical; only the
+   neutral surface/text aliases flip.
+   ============================================================ */
+[data-theme="dark"] {
+  --bg-page:        var(--vip-blue-900);     /* deep brand-blue night */
+  --bg-surface:     var(--vip-blue-800);
+  --bg-elevated:    #0F2A4D;                  /* slightly elevated blue */
+  --bg-inverse:     var(--neutral-0);
+  --bg-brand:       var(--vip-orange-500);    /* unchanged — brand */
+  --bg-brand-soft:  rgba(255, 115, 0, 0.14);
+
+  --fg-primary:     #F4F7FC;
+  --fg-secondary:   #B9C5DB;
+  --fg-tertiary:    #8A9AB8;
+  --fg-muted:       #5A6B89;
+  --fg-inverse:     var(--vip-blue-900);
+  --fg-brand:       var(--vip-orange-400);
+  --fg-heading:     #F4F7FC;
+
+  --border-subtle:  rgba(255, 255, 255, 0.08);
+  --border-strong:  rgba(255, 255, 255, 0.18);
+  --border-brand:   var(--vip-orange-500);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 24px rgba(0, 0, 0, 0.40), 0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 22px 48px rgba(0, 0, 0, 0.55), 0 6px 12px rgba(0, 0, 0, 0.35);
+  --shadow-brand: 0 14px 32px rgba(255, 115, 0, 0.40);
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   ============================================================ */
+
+html, body {
+  font-family: var(--font-body);
+  font-size:   var(--fs-base);
+  line-height: var(--lh-normal);
+  color:       var(--fg-primary);
+  background:  var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.h-display,
+.h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 5.2vw, var(--fs-5xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-primary);
+  text-wrap: balance;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 3vw, var(--fs-3xl));
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-primary);
+  text-wrap: balance;
+}
+
+.h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--fg-primary);
+}
+
+.h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  color: var(--fg-primary);
+}
+
+.h-eyebrow,
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--vip-orange-600);
+}
+
+.p,
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--fg-secondary);
+  text-wrap: pretty;
+}
+
+.lead {
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--fg-secondary);
+}
+
+.caption,
+small {
+  font-size: var(--fs-xs);
+  color: var(--fg-tertiary);
+  line-height: var(--lh-normal);
+}
+
+.mono,
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0;
+}
+
+/* Orange swoosh underline — signature motif from the logo */
+.swoosh-underline {
+  position: relative;
+  display: inline-block;
+}
+.swoosh-underline::after {
+  content: "";
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  bottom: -0.18em;
+  height: 0.32em;
+  background: var(--vip-orange-500);
+  border-radius: 999px;
+  transform: skewX(-12deg) scaleY(0.45);
+  transform-origin: left bottom;
+  z-index: -1;
+}

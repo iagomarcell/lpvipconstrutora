@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VIP Construtora · Sua casa própria está mais perto do que você imagina</title>
+  <meta name="description" content="Construtora regional do interior do Ceará. Realize o sonho da casa própria com atendimento humano, honesto e sem pressão. Fale com a gente no WhatsApp." />
+  <link rel="icon" type="image/png" href="assets/SIMBOLO-COR02-VIP.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Resources referenced as strings in JSX — lifted for the bundler -->
+  <meta name="ext-resource-dependency" content="assets/LOGO-COR02-VIP.png" data-resource-id="logoHeader" />
+  <meta name="ext-resource-dependency" content="assets/logo-white.png" data-resource-id="logoFooter" />
+  <meta name="ext-resource-dependency" content="assets/hero-bg.png" data-resource-id="heroBg" />
+  <meta name="ext-resource-dependency" content="assets/germano.png" data-resource-id="germano" />
+  <meta name="ext-resource-dependency" content="assets/vivian.png" data-resource-id="vivian" />
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&amp;fit=crop&amp;w=900&amp;q=80" data-resource-id="delivery1" />
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=900&amp;q=80" data-resource-id="delivery2" />
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&amp;fit=crop&amp;w=900&amp;q=80" data-resource-id="delivery3" />
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&amp;fit=crop&amp;w=900&amp;q=80" data-resource-id="delivery4" />
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&amp;fit=crop&amp;w=900&amp;q=80" data-resource-id="delivery5" />
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&amp;fit=crop&amp;w=900&amp;q=80" data-resource-id="delivery6" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#FBF6EE">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#FBF6EE"/>
+      <!-- Stylized house silhouette in VIP terracotta -->
+      <g transform="translate(420 220)">
+        <!-- Roof -->
+        <path d="M180 0 L360 140 L360 160 L0 160 L0 140 Z" fill="#C75A2E"/>
+        <!-- House body -->
+        <rect x="30" y="160" width="300" height="220" fill="#F47A1F"/>
+        <!-- Door -->
+        <rect x="150" y="240" width="60" height="140" rx="4" fill="#1C1814"/>
+        <!-- Windows -->
+        <rect x="60" y="200" width="60" height="60" rx="4" fill="#FBF6EE"/>
+        <rect x="240" y="200" width="60" height="60" rx="4" fill="#FBF6EE"/>
+        <!-- VIP star -->
+        <text x="180" y="430" text-anchor="middle" fill="#C75A2E" font-family="serif" font-size="48" font-weight="700">✱ VIP</text>
+      </g>
+    </svg>
+  </template>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel" src="sections-standalone.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
